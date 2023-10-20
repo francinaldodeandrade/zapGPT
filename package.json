@@ -4,8 +4,8 @@
   "description": "integração do watsapp com o twilio",
   "main": "server.js",
   "scripts": {
-    "build": "npm install && tsc && node build/app ",
-    "dev": "npm run build ",
+    "build": "npm install && tsc ",
+    "dev": "npm run build && node build/app ",
     "start": "nodemon server.js"
   },
   "engines": {
