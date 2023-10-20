@@ -12,6 +12,11 @@ app.use(cors())
 
 dotenv.config()
 
+app.get('/chat/open', (req, res) =>{
+   
+   res.status(200).json({success:true, message:"servidor em execução"})
+})
+
 app.post('/chat/send', async(req, res) =>{
     const {to, body} = req.body
     try {
