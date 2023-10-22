@@ -4,3 +4,11 @@
 ACCOUT_SID = AC1388b454a3b487dc764346fb33e6d238 \
 
 AUTH_TOKEN = 5338723a2517434dcb8636c37bd24f29 \
+
+/_client.messages
+.create({
+from: whatsappNumber,
+body: 'mensagem do wheatherZap',
+to: 'whatsapp:+558399735156'
+})
+.then(message => console.log(message.to));_/

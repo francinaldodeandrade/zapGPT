@@ -18,18 +18,11 @@ try{
         body
 }).then(message => console.log(message.body));
 }catch(error) {
+    
     console.error(`Error sending message to ${to}: ${error}`);
     
 }
 }
-
-/*client.messages
-      .create({
-         from: whatsappNumber,
-         body: 'mensagem do wheatherZap',
-         to: 'whatsapp:+558399735156'
-       })
-      .then(message => console.log(message.to));*/
 
 
 
