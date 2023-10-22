@@ -39,7 +39,8 @@ app.post('/receive', async (req, res) => {
 
     try {
         await sendWhatsappMessage(to, messageBody)
-        res.status(200).json({success: true, messageBody})
+        res.status(200).json({success: true, messageBody
+        })
     } catch (error) {
         res.status(500).json({success: false, error})
     }
