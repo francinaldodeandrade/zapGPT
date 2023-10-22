@@ -32,7 +32,7 @@ app.post('/send', async(req, res) =>{
     }
 })
 
-app.post('/chat/receive', async (req, res) => {
+app.post('/receive', async (req, res) => {
     const twilioRequestBody = req.body
     const messageBody = twilioRequestBody.Body
     const to = twilioRequestBody.From

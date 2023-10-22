@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "npm install && tsc ",
-    "dev": "npm run build && nodemon build/app ",
+    "dev": "npm run build && node build/app ",
     "start": "npm run build && node build/app"
   },
   "engines": {
