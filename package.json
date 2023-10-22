@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "build": "npm install && tsc ",
-    "dev": "npm run build && node build/app ",
-    "start": "nodemon server.js"
+    "dev": "npm run build && nodemon build/app ",
+    "start": "npm run build && node build/app"
   },
   "engines": {
     "node": "8.x"

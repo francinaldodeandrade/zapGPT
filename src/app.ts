@@ -2,7 +2,7 @@ import express from "express"
 import bodyParser from "body-parser"
 import cors from "cors"
 import dotenv from "dotenv"
-import { sendWatsappMessage } from "./service/twilio"
+import { sendWhatsappMessage } from "./service/twilio"
 
 const app = express()
 
@@ -12,16 +12,19 @@ app.use(cors())
 
 dotenv.config()
 
-app.get('/chat/open', (req, res) =>{
+app.get('/open', (req, res) =>{
    
    res.status(200).json({success:true, message:"servidor em execução"})
 })
 
-app.post('/chat/send', async(req, res) =>{
+app.post('/send', async(req, res) =>{
     const {to, body} = req.body
     try {
-        await sendWatsappMessage(to, body)
+        
+        await sendWhatsappMessage(to, body)
         res.status(200).json({success:true})
+       
+        
 
     }catch (error){
         res.status(500).json({success:false, error})
