@@ -63,20 +63,22 @@ app.get(`${route_get_localHost}`, (req, res) =>{
     const intenção = req.body.queryResult.intent.displayName
     const parametro = req.body.queryResult.parametrs
 
-    if (req.body.queryResult.parametrs && req.body.queryResult.parametrs.não_vendemos){
-        const responder = `desculpe, não consigo contar ${req.body.queryResult.parametrs.não_vendemos}`
+    let responder =''
 
+    if (parametro && parametro.nao_vendemos){
+        const responder = `desculpe, não vendemos ${parametro.não_vendemos}`
         console.log(`responder, ${responder}`);
-        
 
-        res.send(`mensagem original ${mensagem}`);
-        console.log(`minha mensagem  ${mensagem}`);
+    if ( intenção	== 'verCardapio') {
+     `${responder} nosso cardápio ainda está em elaboração`
+    }
 
-        res.send(`minha intenção ${intenção}`);
-        console.log(`minha intenção ${intenção}`);
-
-        res.send(`mensagem original ${parametro}`);
-        console.log(`mensagem original ${parametro}`);
+    if ( intenção	== 'verStatus') {
+      `${responder} seu pedido ainda está em preparação`
+     }  else {
+      `${responder} sua intenção era ${intenção}
+      }`
+     }
 
     }
    
@@ -86,7 +88,7 @@ app.get(`${route_get_localHost}`, (req, res) =>{
           {
             "text": {
               "text": [
-                "estou no webhook"
+               responder
               ]
             }
           }
