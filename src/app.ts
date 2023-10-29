@@ -77,7 +77,25 @@ app.get(`${route_get_localHost}`, (req, res) =>{
  app.post(`${route_post_dialogFlow}`, (req, res) =>{
    
   console.log("body", req.body.queryResult);
+
+
+  const resposta = {
+    "fulfillmentText": "Resposta do Webhook",
+    "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [
+            'resposta.mensagem'
+          ]
+        }
+      }
+    ],
+    "source": "",}
+
+    console.log("resposta final", resposta)
   
+    res.send(resposta);
+
     
  })
  
