@@ -81,12 +81,21 @@ app.get(`${route_get_localHost}`, (req, res) =>{
   const parametro = req.body.queryResult. parameters
   let responder = ''
 
-  if (parametro && parametro.nao_vendemos) {
-    responder = `desculpe, nós não trabalhamos com ${parametro.nao_vendemos}`
+  if (parametro && parametro.nao_Vendemos) {
+    responder = `desculpe, nós não trabalhamos com ${parametro.nao_Vendemos}`
     console.log("body", req.body.queryResult);
     console.log("responder", responder);
     console.log(intencao);
     console.log(mensagem);    
+  }
+
+  if (intencao == 'verCardapio') {
+    responder = "nosso cardapio está em fase de preparação"
+    
+  }
+
+  if (intencao == 'verStatus') {
+    responder = 'em elaboração de resposta'
   }
 
   const resposta = {
