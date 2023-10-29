@@ -75,9 +75,19 @@ app.get(`${route_get_localHost}`, (req, res) =>{
  //*********************************************rota de post para o dialogflow***********************************************
 
  app.post(`${route_post_dialogFlow}`, (req, res) =>{
-   
-  console.log("body", req.body.queryResult);
 
+  const mensagem = req.body.queryResult.queryText
+  const intencao = req.body.queryResult.intent.displayName
+  const parametro = req.body.queryResult. parameters
+  let responder = ''
+
+  if (parametro && parametro.nao_vendemos) {
+    responder = `desculpe, nós não trabalhamos com ${parametro.nao_vendemos}`
+    console.log("body", req.body.queryResult);
+    console.log("responder", responder);
+    console.log(intencao);
+    console.log(mensagem);    
+  }
 
   const resposta = {
     "fulfillmentText": "Resposta do Webhook",
@@ -85,14 +95,12 @@ app.get(`${route_get_localHost}`, (req, res) =>{
       {
         "text": {
           "text": [
-            'resposta.mensagem'
+            responder
           ]
         }
       }
     ],
     "source": "",}
-
-    console.log("resposta final", resposta)
   
     res.send(resposta);
 
