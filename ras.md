@@ -53,3 +53,5 @@ console.log('Closing http server.');
 process.exit(0);
 });
 });
+
+curl -X POST -H 'Content-Type: application/json' -d '{"responseId":"30c65d84-d694-4917-95d4-e9badc896d56-68d88c4e","queryResult":{"queryText":"ver status","parameters":{"geo-state-us":""},"allRequiredParamsPresent":true,"fulfillmentText":"temos pizza de calabresa e quatro queijos","fulfillmentMessages":[{"text":{"text":["temos pizza de calabresa e quatro queijos"]}}],"outputContexts":[{"name":"projects/pedidosbot-nhnf/agent/sessions/930da24f-8635-6ca5-7dd2-e1332c162892/contexts/__system_counters__","parameters":{"no-input":0,"no-match":0,"geo-state-us":"","geo-state-us.original":""}}],"intent":{"name":"projects/pedidosbot-nhnf/agent/intents/3ad14dcc-3246-4ef3-a00a-5ab7eee0549e","displayName":"verCardapio"},"intentDetectionConfidence":0.46603885,"languageCode":"pt-br"},"originalDetectIntentRequest":{"source":"DIALOGFLOW_CONSOLE","payload":{}},"session":"projects/pedidosbot-nhnf/agent/sessions/930da24f-8635-6ca5-7dd2-e1332c162892"}' https://zapgpt-m3fm.onrender.com/receive/dialogflow
